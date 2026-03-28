@@ -6,14 +6,12 @@ services:
     build: ./my_backend
     container_name: crop_backend
     ports:
-      - "5000:5000"
+      - "5001:5000"
 
   frontend:
-    build:
-      context: .
-      dockerfile: frontend.Dockerfile
+    build: ./frontend
     container_name: crop_frontend
     ports:
-      - "5173:5173"
+      - "80:80"
     depends_on:
       - backend

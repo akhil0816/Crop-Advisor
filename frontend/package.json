@@ -4,10 +4,10 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev": "vite",
+        "dev": "vite --host 0.0.0.0",
         "build": "tsc -b && vite build",
         "eslint": "eslint . --ext .ts,.tsx --fix --max-warnings 0",
-        "preview": "vite preview",
+        "preview": "vite previewc--host 0.0.0.0",
         "prettier": "prettier . --write --ignore-unknown",
         "serve:dist": "serve -s dist -p 5000"
     },
