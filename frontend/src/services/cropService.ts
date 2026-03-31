@@ -41,20 +41,26 @@ export interface District {
 }
 
 //////////////////////////////////////////////////////
-// 🔥 GET DISTRICTS (FROM BACKEND)
+// 🔥 BASE URL (NGINX ROUTING)
+//////////////////////////////////////////////////////
+
+const BASE_URL = "/api";
+
+//////////////////////////////////////////////////////
+// 🔥 GET DISTRICTS
 //////////////////////////////////////////////////////
 
 export const getDistricts = async () => {
-  const res = await fetch("http://api/districts");
+  const res = await fetch(`${BASE_URL}/districts`);
   return res.json();
 };
 
 //////////////////////////////////////////////////////
-// 🔥 MAIN PREDICTION (CONNECTED TO YOUR ML BACKEND)
+// 🔥 MAIN PREDICTION
 //////////////////////////////////////////////////////
 
 export const predictCrop = async (districtId: string) => {
-  const res = await fetch("http://api/predict", {
+  const res = await fetch(`${BASE_URL}/predict`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
