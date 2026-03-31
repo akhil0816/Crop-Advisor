@@ -1,10 +1,10 @@
-from flask import Flask, request, jsonify # pyright: ignore[reportMissingImports]
-from flask_cors import CORS # pyright: ignore[reportMissingModuleSource]
-import joblib # pyright: ignore[reportMissingImports]
-import requests # pyright: ignore[reportMissingModuleSource]
-import numpy as np # pyright: ignore[reportMissingImports]
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+import joblib
+import requests
+import numpy as np
 import datetime
-import pandas as pd # pyright: ignore[reportMissingModuleSource]
+import pandas as pd
 
 app = Flask(__name__)
 CORS(app)  # Allow React to talk to Python
@@ -293,4 +293,4 @@ def health():
 #    ✅ FIX: Port changed to 5001 to match cropService.ts (API_BASE_URL)
 # ============================================================
 if __name__ == '__main__':
-    app.run(host= "0.0.0.0", port=5000, debug=True)
+    app.run(port=5001, debug=True)
