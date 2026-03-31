@@ -3,15 +3,22 @@ version: "3.9"
 services:
 
   backend:
-    build: ./my_backend
-    container_name: crop_backend
-    ports:
-      - "5001:5000"
+    image: ${DOCKER_USER}/crop-backend:latest
+    container_name: backend
+    restart: always
 
   frontend:
-    build: ./frontend
-    container_name: crop_frontend
+    image: ${DOCKER_USER}/crop-frontend:latest
+    container_name: frontend
+    restart: always
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
     ports:
       - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - backend
+      - frontend

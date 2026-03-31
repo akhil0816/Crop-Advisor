@@ -293,4 +293,4 @@ def health():
 #    ✅ FIX: Port changed to 5001 to match cropService.ts (API_BASE_URL)
 # ============================================================
 if __name__ == '__main__':
-    app.run("0.0.0.0.", port=5000)
+    app.run("0.0.0.0", port=5000)
