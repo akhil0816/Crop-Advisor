@@ -45,7 +45,7 @@ export interface District {
 //////////////////////////////////////////////////////
 
 export const getDistricts = async () => {
-  const res = await fetch("http://localhost:5001/districts");
+  const res = await fetch("http://34.224.18.69:5001/districts");
   return res.json();
 };
 
@@ -54,7 +54,7 @@ export const getDistricts = async () => {
 //////////////////////////////////////////////////////
 
 export const predictCrop = async (districtId: string) => {
-  const res = await fetch("http://localhost:5001/predict", {
+  const res = await fetch("http://34.224.18.69:5001/predict", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
